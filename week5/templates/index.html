@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>INCOME PREDICTION</title>
+</head>
 
+<body style="background: #FFA07A;">
+ <div class="login">
+	<h1 style="color:Black;">INCOME PREDICTION</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<label for="Gender">Gender:</label>
+        <input type="text" name="Gender" placeholder="1= Male or 0= Female" required="required" /><p><br>
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" placeholder="Enter the Age" required="required" /><p><br>
+        <label for="Height">Height:</label>
+        <input type="text" name="Height" placeholder="Height in cm" required="required" /><p><br>
+        <label for="Weight">Weight:</label>
+        <input type="text" name="Weight" placeholder="Weight in kg" required="required" /><p><br>
+        <label for="Occupation">Occupation:</label>
+        <input type="text" name="Occupation" placeholder="Select option from 0 to 18" required="required" /><p><br>   
+        <label for="Education">Education:</label>
+        <input type="text" name="Education" placeholder="Select option from 0 to 3" required="required" /><p><br>  
+        <label for="Marital status">Marital Status:</label>
+        <input type="text" name="Marital Status" placeholder="Select option from 0 to 3" required="required" /><p><br> 
+     
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></p>
+    </form>
+
+<h8 style="color:white;">List of Occupations:</h8><br>
+<h8 style="color:white;">0:CEO, 1:Accountant, 2:IT Manager, 3:Business Analyst,
+4:Software Developer, 5:Analyst, 6:Doctor,</h8><br>
+<h8 style="color:white;">7:Project Manager, 8:Nurse, 9:Architect,
+10:Lawyer, 11:Graphic Designer, 12:Marketing Specialist,</h8> <br> 
+<h8 style="color:white;">13:Engineer, 14:Sales Representative,
+15:Software Engineer, 16:Business Consultant, 17:Teacher, 18:Writer </h8><br></br>
+<h8 style="color:white;">Level of Education:</h8>
+<h8 style="color:white;">0:Associates, 1:Bachelors, 2:Doctorate, 3:Masters</h8><br></br>
+<h8 style="color:white;">Level of Education:</h8>
+<h8 style="color:white;">0:Divorced, 1:Married, 2:Single, 3:Window</h8><br>
+ </div>
+
+</body>
+</html>
