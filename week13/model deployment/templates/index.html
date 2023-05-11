@@ -1,1 +1,80 @@
+<!DOCTYPE html>
 
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>BANK MARKETING CAMPAIGN</title>
+
+</head>
+
+<body style="background: #99C68E;">
+ <div class="login">
+	<h1 style="color:Black;">PREDICTION FOR CUSTOMER INTEREST IN  DEPOSITE TERM</h1>
+	
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <h8 style="color:Red;">Note: All variables are normalised.Please enter normalised values(Range: 0-1)</h8><br></br>
+    	<label for="Age">Age:</label>
+        <input type="text" name="Age" placeholder="Enter your Age" required="required" /><p><br>
+        <label for="Job">Job:</label>
+        <input type="text" name="Job" placeholder="Select option " required="required" /><p>
+        <h8 style="color:white;">List of Job:</h8><br>
+        <h8 style="color:white;">0.00:Admin, 0.091:Blue-Collar, 0.182:Entrepreneur, 0.273:Housemaid,
+        0.364:Mangement, 0.454:Retired,</h8><br>
+        <h8 style="color:white;"> 0.545:Self-employed,0.636:Services, 0.727:student, 0.818:Technician,
+        0.91:Unemployed, 1.00:Un-known</h8><br></br>
+        <label for="Marital">Marital Status:</label>
+        <input type="text" name="Marital" placeholder="Select option" required="required" /><p>
+        <h8 style="color:white;">Marital Status:</h8>
+        <h8 style="color:white;">0.0:Divorced/widow, 0.5:Married, 1.0:Single</h8><br></br>
+        <label for="Education">Education:</label>
+        <input type="text" name="Education" placeholder="Select option" required="required" /><p>
+        <h8 style="color:white;">Level of Education:</h8>
+        <h8 style="color:white;">0.0:Primary, 0.33:Secondary, 0.67:Tertiary, 1.0:Unknown</h8><br></br>
+        <label for="Default">Credit Default:</label>
+        <input type="text" name="Default" placeholder="0.0=No / 1.0=Yes" required="required" /><p><br>   
+        <label for="Balance">Balance:</label>
+        <input type="text" name="Balance" placeholder="Enter Balance" required="required" /><p><br>
+        <label for="Housing">Housing Loan:</label>
+        <input type="text" name="Housing" placeholder="0.0=No / 1.0=Yes" required="required" /><p><br>
+        <label for="Loan">Personal Loan:</label>
+        <input type="text" name="Loan" placeholder="0.0=No / 1.0=Yes" required="required" /><p><br>
+        <label for="Contact">Contact Communicattion Type:</label>
+        <input type="text" name="Contact" placeholder="Select option" required="required" /><p>
+        <h8 style="color:white;">Contact Communicattion Types:</h8>
+        <h8 style="color:white;">0.0:Cellular, 0.5:Telephone, 1.0:Unknown</h8><br></br>
+        <label for="Day">Day:</label>
+        <input type="text" name="Day" placeholder="Enter workday number" required="required" /><p><br>
+        <label for="Month">Month:</label>
+        <input type="text" name="Month" placeholder="Enter month number" required="required" /><p>
+        <h8 style="color:white;">Months:</h8><br>
+        <h8 style="color:white;">0.364:Jan, 0.273:Feb, 0.636:Mar, 0.00:April, 0.727:May, 0.545:jun,      
+         0.454:Jul, 0.091:Aug, 1.00:Sep, 0.91:Oct, 0.818:Nov, 0.182:Dec</h8><br></br>
+        <label for="Campaign">Campaign:</label>
+        <input type="text" name="Campaign" placeholder="Enter campaign days" required="required" /><p><br>
+        <label for="Pdays">Days Passed by:</label>
+        <input type="text" name="Pdays" placeholder="Enter number of days" required="required" /><p><br>
+        <label for="Previous">Previous:</label>
+        <input type="text" name="Previous" placeholder="Enter number of days"" required="required" /><p><br> 
+        <label for="Poutcome">Previous Marketing Outcome:</label>
+        <input type="text" name="Poutocme" placeholder="Select option" required="required" /><p>
+        <h8 style="color:white;">Previous Marketing Outcome:</h8>
+        <h8 style="color:white;">0.00:Failure, 0.667:Success, 0.33:Other, 1.00:Unknown</h8><br></br>
+     
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></p>
+    </form>
+
+ </div>
+    <div class="login">
+
+	<h1 style="color:Red;">The client will subscribe a term deposit: {{prediction_text}}</h1>
+	</div>
+	<h8 style="color:white;">1 = Yes </h8><br>
+	<h8 style="color:white;">0 = No </h8><br>
+</body>
+</html>
